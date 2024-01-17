@@ -16,12 +16,17 @@ app.UseCors(b => b
 const string fileName = "subscriptions.json";
 app.MapGet("/subscriptions", async () => await Helpers.PushSubscriptions(fileName));
 
-app.MapGet("/vapidKey", (IConfiguration config) => config["Vapid:PublicKey"]);
+app.MapGet("/vapidKey", (IConfiguration config) => new VapidKey(){PublicKey = config["Vapid:PublicKey"] ?? string.Empty});
 
-app.MapPost("/subscriptions", async (PushSubscription subscription) =>
+app.MapPost("/subscriptions", async (BrowserPushSubscription subscription) =>
 {
    var subscriptions = await Helpers.PushSubscriptions(fileName);
-   subscriptions.Add(subscription);
+   subscriptions.Add(new PushSubscription()
+   {
+      Auth = subscription.Keys.Auth,
+      P256DH = subscription.Keys.P256DH,
+      Endpoint = subscription.Endpoint
+   });
    
    File.WriteAllText(fileName,JsonSerializer.Serialize(subscriptions));
 });
@@ -30,8 +35,8 @@ app.MapPost("/pushNotification", async (NotificationMessage message, IConfigurat
 {
    var subscriptions = await Helpers.PushSubscriptions(fileName);
    string subject = configuration["Vapid:Subject"] ?? string.Empty;
-   string publicKey = configuration["Vapid:Subject"] ?? string.Empty;
-   string privateKey = configuration["Vapid:Subject"] ?? string.Empty;
+   string publicKey = configuration["Vapid:PublicKey"] ?? string.Empty;
+   string privateKey = configuration["Vapid:PrivateKey"] ?? string.Empty;
    var options = new Dictionary<string,object>();
    options["vapidDetails"] = new VapidDetails(subject, publicKey, privateKey);
    //options["gcmAPIKey"] = @"[your key here]";
@@ -40,9 +45,13 @@ app.MapPost("/pushNotification", async (NotificationMessage message, IConfigurat
 
    var angularNotificationString = JsonSerializer.Serialize(new AngularNotification()
    {
-      Body = message.Body,
-      Title = message.Title
-   });
+      Notification = new() 
+      {
+         Body = message.Body,
+         Title = message.Title,
+         Icon = "assets/icons/icon-96x96.png"
+      }
+   }, new JsonSerializerOptions() {PropertyNamingPolicy = JsonNamingPolicy.CamelCase});
    
    foreach (PushSubscription sub in subscriptions)
    {
