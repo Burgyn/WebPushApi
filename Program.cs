@@ -15,11 +15,8 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddCors();
 var app = builder.Build();
 
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+app.UseSwagger();
+app.UseSwaggerUI();
 
 app.UseCors(b => b
    .AllowAnyOrigin()
@@ -65,7 +62,7 @@ app.MapPost("/pushNotification", async (NotificationMessage message, IConfigurat
             Title = message.Title,
             Icon = message.Icon
         }
-    }, options: new () { PropertyNamingPolicy = JsonNamingPolicy.CamelCase });
+    }, options: new() { PropertyNamingPolicy = JsonNamingPolicy.CamelCase });
 
     await foreach (PushSubscription sub in provider.GetSubscriptions())
     {
