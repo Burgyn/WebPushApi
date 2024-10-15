@@ -2,6 +2,8 @@ using System.Text.Json;
 using WebPush;
 using WebPushApi;
 
+//dummy
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddSingleton<ISubscriptionProvider, SubscriptionProvider>();
