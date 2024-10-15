@@ -7,8 +7,18 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddSingleton<ISubscriptionProvider, SubscriptionProvider>();
 builder.Services.AddLogging();
 
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
 builder.Services.AddCors();
 var app = builder.Build();
+
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
+
 app.UseCors(b => b
    .AllowAnyOrigin()
    .AllowAnyMethod()
