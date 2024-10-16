@@ -1,5 +1,6 @@
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using System.Net;
 using System.Text.Json;
 using WebPush;
 using WebPushApi;
@@ -59,6 +60,7 @@ app.MapPost("/pushNotification", async (NotificationMessage message, ISubscripti
 
 app.MapPost("/pushNotification/{endpoint}", async (string endpoint, NotificationMessage message, ISubscriptionProvider provider, ILoggerFactory loggerFactory, IOptions<VapidOptions> vapid) =>
 {
+    endpoint = WebUtility.UrlDecode(endpoint);
     await OnHandleNotification(message, provider, loggerFactory, vapid, async (webPushClient, angularNotificationString, options) =>
     {
         var sub = await provider.GetSubscriptionsAsync(endpoint);
