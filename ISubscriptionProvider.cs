@@ -8,6 +8,8 @@ public interface ISubscriptionProvider
     IAsyncEnumerable<PushSubscription> GetSubscriptions();
 
     Task AddSubscription(PushSubscription subscription);
+
+    Task<PushSubscription> GetSubscriptionsAsync(string endpoint);
 }
 
 public class SubscriptionProvider : ISubscriptionProvider
@@ -29,4 +31,7 @@ public class SubscriptionProvider : ISubscriptionProvider
             await Task.Yield();
         }
     }
+
+    public Task<PushSubscription> GetSubscriptionsAsync(string endpoint)
+        => Task.FromResult(_subscription[endpoint]);
 }

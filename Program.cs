@@ -1,3 +1,5 @@
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 using System.Text.Json;
 using WebPush;
 using WebPushApi;
@@ -5,6 +7,8 @@ using WebPushApi;
 //dummy
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddOptions<VapidOptions>().Bind(builder.Configuration.GetSection("Vapid")).ValidateDataAnnotations();
 
 builder.Services.AddSingleton<ISubscriptionProvider, SubscriptionProvider>();
 builder.Services.AddLogging();
@@ -42,17 +46,41 @@ app.MapPost("/subscriptions", async (BrowserPushSubscription subscription, ISubs
     });
 });
 
-app.MapPost("/pushNotification", async (NotificationMessage message, IConfiguration configuration, ISubscriptionProvider provider, ILoggerFactory loggerFactory) =>
+app.MapPost("/pushNotification", async (NotificationMessage message, ISubscriptionProvider provider, ILoggerFactory loggerFactory, IOptions<VapidOptions> vapid) =>
 {
-    string subject = configuration["Vapid:Subject"]!;
-    string publicKey = configuration["Vapid:PublicKey"]!;
-    string privateKey = configuration["Vapid:PrivateKey"]!;
+    await OnHandleNotification(message, provider, loggerFactory, vapid, async (webPushClient, angularNotificationString, options) =>
+    {
+        await foreach (PushSubscription sub in provider.GetSubscriptions())
+        {
+            await webPushClient.SendNotificationAsync(sub, angularNotificationString, options);
+        }
+    });
+});
+
+app.MapPost("/pushNotification/{endpoint}", async (string endpoint, NotificationMessage message, ISubscriptionProvider provider, ILoggerFactory loggerFactory, IOptions<VapidOptions> vapid) =>
+{
+    await OnHandleNotification(message, provider, loggerFactory, vapid, async (webPushClient, angularNotificationString, options) =>
+    {
+        var sub = await provider.GetSubscriptionsAsync(endpoint);
+        await webPushClient.SendNotificationAsync(sub, angularNotificationString, options);
+    });
+});
+
+app.Run();
+
+static async Task OnHandleNotification(
+    NotificationMessage message,
+    ISubscriptionProvider provider,
+    ILoggerFactory loggerFactory,
+    IOptions<VapidOptions> vapid,
+    Func<WebPushClient, string, Dictionary<string, object>,
+    Task> func)
+{
+    var vapidOptions = vapid.Value;
     var options = new Dictionary<string, object>
     {
-        ["vapidDetails"] = new VapidDetails(subject, publicKey, privateKey)
+        ["vapidDetails"] = new VapidDetails(vapidOptions.Subject, vapidOptions.PublicKey, vapidOptions.PrivateKey)
     };
-
-    var webPushClient = new WebPushClient();
 
     var angularNotificationString = JsonSerializer.Serialize(new AngularNotification()
     {
@@ -64,17 +92,20 @@ app.MapPost("/pushNotification", async (NotificationMessage message, IConfigurat
         }
     }, options: new() { PropertyNamingPolicy = JsonNamingPolicy.CamelCase });
 
-    await foreach (PushSubscription sub in provider.GetSubscriptions())
+    var webPushClient = new WebPushClient();
+    try
     {
-        try
-        {
-            await webPushClient.SendNotificationAsync(sub, angularNotificationString, options);
-        }
-        catch (WebPushException exception)
-        {
-            loggerFactory.CreateLogger("notification").LogError(exception, "Error sending push notification");
-        }
+        await func(webPushClient, angularNotificationString, options);
     }
-});
+    catch (WebPushException exception)
+    {
+        loggerFactory.CreateLogger("notification").LogError(exception, "Error sending push notification");
+    }
+}
 
-app.Run();
+public class VapidOptions
+{
+    public string PublicKey { get; set; } = string.Empty;
+    public string PrivateKey { get; set; } = string.Empty;
+    public string Subject { get; set; } = string.Empty;
+}
