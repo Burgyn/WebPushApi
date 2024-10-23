@@ -5,7 +5,7 @@ namespace WebPushApi;
 
 public interface ISubscriptionProvider
 {
-    IAsyncEnumerable<PushSubscription> GetSubscriptions();
+    IEnumerable<PushSubscription> GetSubscriptions();
 
     Task AddSubscription(PushSubscription subscription);
 
@@ -23,14 +23,8 @@ public class SubscriptionProvider : ISubscriptionProvider
         return Task.CompletedTask;
     }
 
-    public async IAsyncEnumerable<PushSubscription> GetSubscriptions()
-    {
-        foreach (var item in _subscription.Values)
-        {
-            yield return item;
-            await Task.Yield();
-        }
-    }
+    public IEnumerable<PushSubscription> GetSubscriptions()
+        => _subscription.Values;
 
     public Task<PushSubscription> GetSubscriptionsAsync(string endpoint)
         => Task.FromResult(_subscription[endpoint]);

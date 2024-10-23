@@ -3,12 +3,14 @@
 public class AngularNotification
 {
     public NotificationWrapper Notification { get; set; }
+
     public class NotificationWrapper
     {
         public class NotificationAction
         {
             public string Action { get; set; } = string.Empty;
-            public string Title { get; } = string.Empty;
+
+            public string Title { get; set; } = string.Empty;
         }
 
         public string Title { get; set; } = string.Empty;

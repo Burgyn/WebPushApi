@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using System.Net;
 using System.Text.Json;
@@ -50,14 +51,14 @@ app.MapPost("/pushNotification", async (NotificationMessage message, ISubscripti
 {
     await OnHandleNotification(message, provider, loggerFactory, vapid, async (webPushClient, angularNotificationString, options) =>
     {
-        await foreach (PushSubscription sub in provider.GetSubscriptions())
+        foreach (PushSubscription sub in provider.GetSubscriptions())
         {
             await webPushClient.SendNotificationAsync(sub, angularNotificationString, options);
         }
     });
 });
 
-app.MapPost("/pushNotification/{endpoint}", async (string endpoint, NotificationMessage message, ISubscriptionProvider provider, ILoggerFactory loggerFactory, IOptions<VapidOptions> vapid) =>
+app.MapPost("/pushNotificationPerUser", async ([FromQuery] string endpoint, NotificationMessage message, ISubscriptionProvider provider, ILoggerFactory loggerFactory, IOptions<VapidOptions> vapid) =>
 {
     endpoint = WebUtility.UrlDecode(endpoint);
     await OnHandleNotification(message, provider, loggerFactory, vapid, async (webPushClient, angularNotificationString, options) =>
@@ -89,7 +90,9 @@ static async Task OnHandleNotification(
         {
             Body = message.Body,
             Title = message.Title,
-            Icon = message.Icon
+            Icon = message.Icon,
+            Data = message.Data,
+            Actions = message.Actions
         }
     }, options: new() { PropertyNamingPolicy = JsonNamingPolicy.CamelCase });
 
