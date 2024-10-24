@@ -1,0 +1,791 @@
+[
+  {
+    "id": 0,
+    "name": "KROS, a.s.",
+    "last_updated": "20.9.2024",
+    "icon": "assets/icons/kros-logo-black.svg",
+    "current_month_sales": {
+      "total": 134885,
+      "currency": "EUR",
+      "vat_excluded": true,
+      "change": {
+        "amount": 4885,
+        "percentage": 14
+      }
+    },
+    "warnings": [
+      {
+        "description": "Chýbajúce doklady (2)"
+      }
+    ],
+    "banks": [
+      {
+        "index": 0,
+        "name": "VÚB banka, a.s.",
+        "account_number": "SK1234567890",
+        "balance": 12345.67,
+        "trend": "26",
+        "currency": "EUR",
+        "icon": "assets/icons/vub.png"
+      },
+      {
+        "index": 1,
+        "name": "Tatra banka, a.s.",
+        "account_number": "SK0987654321",
+        "balance": 23456.78,
+        "trend": "-24",
+        "currency": "EUR",
+        "icon": "assets/icons/tatra.png"
+      },
+      {
+        "index": 2,
+        "name": "Slovenská sporiteľňa, a.s.",
+        "account_number": "SK1357924680",
+        "balance": 34567.89,
+        "trend": "0",
+        "currency": "EUR",
+        "icon": "assets/icons/slsp.png"
+      },
+      {
+        "index": 3,
+        "name": "ČSOB, a.s.",
+        "account_number": "SK2468135790",
+        "balance": 45678.90,
+        "trend": "12",
+        "currency": "EUR",
+        "icon": "assets/icons/csob.png"
+      },
+      {
+        "index": 4,
+        "name": "UniCredit Bank Slovakia, a.s.",
+        "account_number": "SK3579246801",
+        "balance": 56789.01,
+        "trend": "-8",
+        "currency": "EUR",
+        "icon": "assets/icons/unicredit.png"
+      }
+    ],
+    "cashiers": [
+      {
+        "index": 0,
+        "currency": "EUR",
+        "description": "Hlavná pokladnica",
+        "total": 12345.67,
+        "trend": "1412.42"
+      },
+      {
+        "index": 1,
+        "currency": "USD",
+        "description": "Valutová pokladnica",
+        "total": 23456.78,
+        "trend": "-424.31"
+      },
+      {
+        "index": 2,
+        "currency": "GBP",
+        "description": "Hotovosť",
+        "total": 34567.89,
+        "trend": "0"
+      },
+      {
+        "index": 3,
+        "currency": "CZK",
+        "description": "Pokladnica 3",
+        "total": 45678.90,
+        "trend": "12"
+      },
+      {
+        "index": 4,
+        "currency": "HUF",
+        "description": "Pokladnica 4",
+        "total": 56789.01,
+        "trend": "-8"
+      }
+    ],
+    "financial_status": [
+      {
+        "description": "Pohľadávky",
+        "total": 3945,
+        "due": 1345.66,
+        "overdue": 2599.34,
+        "long_term": 1232.45,
+        "currency": "EUR"
+      },
+      {
+        "description": "Záväzky",
+        "total": 1345.66,
+        "due": 123.45,
+        "overdue": 122.45,
+        "long_term": 1100.76,
+        "currency": "EUR"
+      }
+    ],
+    "receivables_total": 36690.28,
+    "receivables": [
+      {
+        "document_number": "ST001",
+        "supplier": "Slovak Telekom, a.s.",
+        "due_date": "23.9.2024",
+        "overdue_days": 3,
+        "amount": 27.28,
+        "currency": "EUR"
+      },
+      {
+        "document_number": "SE001",
+        "supplier": "Slovenské elektrárne, a.s.",
+        "due_date": "28.9.2024",
+        "overdue_days": 7,
+        "amount": 277.20,
+        "currency": "EUR"
+      },
+      {
+        "document_number": "KR001",
+        "supplier": "KROS, a.s.",
+        "due_date": "4.10.2024",
+        "amount": 2277.00,
+        "currency": "EUR"
+      },
+      {
+        "document_number": "SP001",
+        "supplier": "Sociálna poisťovňa",
+        "due_date": "8.10.2024",
+        "amount": 899.00,
+        "currency": "EUR"
+      },
+      {
+        "document_number": "FSSR001",
+        "supplier": "Finančná správa Slovenskej Republiky",
+        "due_date": "25.10.2024",
+        "amount": 993.07,
+        "currency": "EUR"
+      },
+      {
+        "document_number": "D001",
+        "supplier": "Slovak Telekom, a.s.",
+        "due_date": "15.10.2024",
+        "overdue_days": -2,
+        "amount": 200.00,
+        "currency": "EUR"
+      },
+      {
+        "document_number": "D002",
+        "supplier": "Západoslovenská distribučná, a.s.",
+        "due_date": "10.10.2024",
+        "overdue_days": 3,
+        "amount": 500.35,
+        "currency": "EUR"
+      },
+      {
+        "document_number": "D003",
+        "supplier": "VUB banka, a.s.",
+        "due_date": "20.10.2024",
+        "overdue_days": -10,
+        "amount": 320.80,
+        "currency": "EUR"
+      },
+      {
+        "document_number": "D004",
+        "supplier": "SSE - Stredoslovenská energetika, a.s.",
+        "due_date": "5.10.2024",
+        "overdue_days": 8,
+        "amount": 150.75,
+        "currency": "EUR"
+      },
+      {
+        "document_number": "D005",
+        "supplier": "O2 Slovakia, s.r.o.",
+        "due_date": "1.10.2024",
+        "overdue_days": 12,
+        "amount": 98.50,
+        "currency": "EUR"
+      },
+      {
+        "document_number": "D006",
+        "supplier": "Slovenská pošta, a.s.",
+        "due_date": "7.10.2024",
+        "overdue_days": 5,
+        "amount": 55.20,
+        "currency": "EUR"
+      },
+      {
+        "document_number": "D007",
+        "supplier": "Tatra banka, a.s.",
+        "due_date": "22.10.2024",
+        "overdue_days": -12,
+        "amount": 620.00,
+        "currency": "EUR"
+      },
+      {
+        "document_number": "D008",
+        "supplier": "Slovenské elektrárne, a.s.",
+        "due_date": "18.9.2024",
+        "overdue_days": 20,
+        "amount": 405.00,
+        "currency": "EUR"
+      },
+      {
+        "document_number": "D009",
+        "supplier": "Orange Slovensko, a.s.",
+        "due_date": "12.9.2024",
+        "overdue_days": 25,
+        "amount": 210.50,
+        "currency": "EUR"
+      },
+      {
+        "document_number": "D010",
+        "supplier": "ZSE Energia, a.s.",
+        "due_date": "25.9.2024",
+        "overdue_days": 15,
+        "amount": 345.10,
+        "currency": "EUR"
+      }
+    ],
+    "liabilities_total": 12345.67,
+    "liabilities": [
+      {
+        "document_number": "L001",
+        "creditor": "PPD, s.r.o.",
+        "due_date": "12.10.2024",
+        "overdue_days": 2,
+        "amount": 620.40,
+        "currency": "EUR"
+      },
+      {
+        "document_number": "L002",
+        "creditor": "Heineken Slovensko, a.s.",
+        "due_date": "20.10.2024",
+        "overdue_days": -4,
+        "amount": 245.30,
+        "currency": "EUR"
+      },
+      {
+        "document_number": "L003",
+        "creditor": "Billa, s.r.o.",
+        "due_date": "18.10.2024",
+        "overdue_days": 0,
+        "amount": 780.00,
+        "currency": "EUR"
+      },
+      {
+        "document_number": "L004",
+        "creditor": "Lidl Slovenská republika, v.o.s.",
+        "due_date": "15.10.2024",
+        "overdue_days": 3,
+        "amount": 550.50,
+        "currency": "EUR"
+      },
+      {
+        "document_number": "L005",
+        "creditor": "Tesco Stores SR, a.s.",
+        "due_date": "22.10.2024",
+        "overdue_days": -10,
+        "amount": 960.20,
+        "currency": "EUR"
+      },
+      {
+        "document_number": "L006",
+        "creditor": "Shell Slovakia, s.r.o.",
+        "due_date": "30.9.2024",
+        "overdue_days": 15,
+        "amount": 315.90,
+        "currency": "EUR"
+      },
+      {
+        "document_number": "L007",
+        "creditor": "OMV Slovensko, s.r.o.",
+        "due_date": "5.10.2024",
+        "overdue_days": 10,
+        "amount": 180.60,
+        "currency": "EUR"
+      },
+      {
+        "document_number": "L008",
+        "creditor": "Metro Cash & Carry SR, s.r.o.",
+        "due_date": "8.10.2024",
+        "overdue_days": 7,
+        "amount": 540.70,
+        "currency": "EUR"
+      },
+      {
+        "document_number": "L009",
+        "creditor": "IKEA Bratislava, s.r.o.",
+        "due_date": "10.10.2024",
+        "overdue_days": 5,
+        "amount": 410.80,
+        "currency": "EUR"
+      },
+      {
+        "document_number": "L010",
+        "creditor": "Alza.sk, a.s.",
+        "due_date": "25.9.2024",
+        "overdue_days": 20,
+        "amount": 330.40,
+        "currency": "EUR"
+      }
+    ]
+  },
+  {
+    "id": 1,
+    "name": "Firma Bratislava",
+    "icon": "assets/icons/kros-logo-orange.svg",
+    "last_updated": "15.9.2024",
+    "current_month_sales": {
+      "total": 94520,
+      "currency": "EUR",
+      "vat_excluded": true,
+      "change": {
+        "amount": 6520,
+        "percentage": 9
+      }
+    },
+    "warnings": [
+      {
+        "description": "Chýbajúce doklady (1)"
+      }
+    ],
+    "banks": [
+      {
+        "index": 0,
+        "name": "VÚB banka, a.s.",
+        "account_number": "SK1234567890",
+        "balance": 12345.67,
+        "trend": "26",
+        "currency": "EUR",
+        "icon": "assets/icons/vub.png"
+      },
+      {
+        "index": 1,
+        "name": "Tatra banka, a.s.",
+        "account_number": "SK0987654321",
+        "balance": 23456.78,
+        "trend": "-24",
+        "currency": "EUR",
+        "icon": "assets/icons/tatra.png"
+      },
+      {
+        "index": 2,
+        "name": "Slovenská sporiteľňa, a.s.",
+        "account_number": "SK1357924680",
+        "balance": 34567.89,
+        "trend": "0",
+        "currency": "EUR",
+        "icon": "assets/icons/slsp.png"
+      },
+      {
+        "index": 3,
+        "name": "ČSOB, a.s.",
+        "account_number": "SK2468135790",
+        "balance": 45678.90,
+        "trend": "12",
+        "currency": "EUR",
+        "icon": "assets/icons/csob.png"
+      },
+      {
+        "index": 4,
+        "name": "UniCredit Bank Slovakia, a.s.",
+        "account_number": "SK3579246801",
+        "balance": 56789.01,
+        "trend": "-8",
+        "currency": "EUR",
+        "icon": "assets/icons/unicredit.png"
+      }
+    ],
+    "cashiers": [
+      {
+        "index": 0,
+        "currency": "EUR",
+        "description": "Hlavná pokladnica",
+        "total": 12345.67,
+        "trend": "4124.24"
+      },
+      {
+        "index": 1,
+        "currency": "USD",
+        "description": "Valutová pokladnica",
+        "total": 23456.78,
+        "trend": "9432.12"
+      },
+      {
+        "index": 2,
+        "currency": "GBP",
+        "description": "Hotovosť",
+        "total": 34567.89,
+        "trend": "0"
+      },
+      {
+        "index": 3,
+        "currency": "CZK",
+        "description": "Pokladnica 3",
+        "total": 45678.90,
+        "trend": "329.21"
+      },
+      {
+        "index": 4,
+        "currency": "HUF",
+        "description": "Pokladnica 4",
+        "total": 56789.01,
+        "trend": "-8"
+      }
+    ],
+    "financial_status": [
+      {
+        "description": "Pohľadávky",
+        "total": 3945,
+        "due": 1345.66,
+        "overdue": 2599.34,
+        "long_term": 1232.45,
+        "currency": "EUR"
+      },
+      {
+        "description": "Záväzky",
+        "total": 1345.66,
+        "due": 123.45,
+        "overdue": 122.45,
+        "long_term": 1100.76,
+        "currency": "EUR"
+      }
+    ],
+    "receivables_total": 460.60,
+    "receivables": [
+      {
+        "document_number": "D001",
+        "supplier": "Orange Slovensko, a.s.",
+        "due_date": "12.9.2024",
+        "overdue_days": 8,
+        "amount": 50.50,
+        "currency": "EUR"
+      },
+      {
+        "document_number": "D002",
+        "supplier": "Východoslovenská energetika, a.s.",
+        "due_date": "20.9.2024",
+        "overdue_days": 1,
+        "amount": 110.10,
+        "currency": "EUR"
+      },
+      {
+        "document_number": "D003",
+        "supplier": "Tatra banka, a.s.",
+        "due_date": "30.9.2024",
+        "overdue_days": 9,
+        "amount": 299.50,
+        "currency": "EUR"
+      }
+    ],
+    "liabilities_total": 12345.67,
+    "liabilities": [
+      {
+        "document_number": "L001",
+        "creditor": "PPD, s.r.o.",
+        "due_date": "12.10.2024",
+        "overdue_days": 2,
+        "amount": 620.40,
+        "currency": "EUR"
+      },
+      {
+        "document_number": "L002",
+        "creditor": "Heineken Slovensko, a.s.",
+        "due_date": "20.10.2024",
+        "overdue_days": -4,
+        "amount": 245.30,
+        "currency": "EUR"
+      },
+      {
+        "document_number": "L003",
+        "creditor": "Billa, s.r.o.",
+        "due_date": "18.10.2024",
+        "overdue_days": 0,
+        "amount": 780.00,
+        "currency": "EUR"
+      },
+      {
+        "document_number": "L004",
+        "creditor": "Lidl Slovenská republika, v.o.s.",
+        "due_date": "15.10.2024",
+        "overdue_days": 3,
+        "amount": 550.50,
+        "currency": "EUR"
+      },
+      {
+        "document_number": "L005",
+        "creditor": "Tesco Stores SR, a.s.",
+        "due_date": "22.10.2024",
+        "overdue_days": -10,
+        "amount": 960.20,
+        "currency": "EUR"
+      },
+      {
+        "document_number": "L006",
+        "creditor": "Shell Slovakia, s.r.o.",
+        "due_date": "30.9.2024",
+        "overdue_days": 15,
+        "amount": 315.90,
+        "currency": "EUR"
+      },
+      {
+        "document_number": "L007",
+        "creditor": "OMV Slovensko, s.r.o.",
+        "due_date": "5.10.2024",
+        "overdue_days": 10,
+        "amount": 180.60,
+        "currency": "EUR"
+      },
+      {
+        "document_number": "L008",
+        "creditor": "Metro Cash & Carry SR, s.r.o.",
+        "due_date": "8.10.2024",
+        "overdue_days": 7,
+        "amount": 540.70,
+        "currency": "EUR"
+      },
+      {
+        "document_number": "L009",
+        "creditor": "IKEA Bratislava, s.r.o.",
+        "due_date": "10.10.2024",
+        "overdue_days": 5,
+        "amount": 410.80,
+        "currency": "EUR"
+      },
+      {
+        "document_number": "L010",
+        "creditor": "Alza.sk, a.s.",
+        "due_date": "25.9.2024",
+        "overdue_days": 20,
+        "amount": 330.40,
+        "currency": "EUR"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Firma Košice",
+    "icon": "assets/icons/kros-logo-white.svg",
+    "last_updated": "10.9.2024",
+    "current_month_sales": {
+      "total": 205300,
+      "currency": "EUR",
+      "vat_excluded": true,
+      "change": {
+        "amount": 10300,
+        "percentage": 5
+      }
+    },
+    "warnings": [
+      {
+        "description": "Chýbajúce doklady (5)"
+      }
+    ],
+    "banks": [
+      {
+        "index": 0,
+        "name": "VÚB banka, a.s.",
+        "account_number": "SK1234567890",
+        "balance": 12345.67,
+        "trend": "26",
+        "currency": "EUR",
+        "icon": "assets/icons/vub.png"
+      },
+      {
+        "index": 1,
+        "name": "Tatra banka, a.s.",
+        "account_number": "SK0987654321",
+        "balance": 23456.78,
+        "trend": "-24",
+        "currency": "EUR",
+        "icon": "assets/icons/tatra.png"
+      },
+      {
+        "index": 2,
+        "name": "Slovenská sporiteľňa, a.s.",
+        "account_number": "SK1357924680",
+        "balance": 34567.89,
+        "trend": "0",
+        "currency": "EUR",
+        "icon": "assets/icons/slsp.png"
+      },
+      {
+        "index": 3,
+        "name": "ČSOB, a.s.",
+        "account_number": "SK2468135790",
+        "balance": 45678.90,
+        "trend": "12",
+        "currency": "EUR",
+        "icon": "assets/icons/csob.png"
+      },
+      {
+        "index": 4,
+        "name": "UniCredit Bank Slovakia, a.s.",
+        "account_number": "SK3579246801",
+        "balance": 56789.01,
+        "trend": "-8",
+        "currency": "EUR",
+        "icon": "assets/icons/unicredit.png"
+      }
+    ],
+    "cashiers": [
+      {
+        "index": 0,
+        "currency": "EUR",
+        "description": "Hlavná pokladnica",
+        "total": 12345.67,
+        "trend": "226.90"
+      },
+      {
+        "index": 1,
+        "currency": "USD",
+        "description": "Valutová pokladnica",
+        "total": 23456.78,
+        "trend": "-321.21"
+      },
+      {
+        "index": 2,
+        "currency": "GBP",
+        "description": "Hotovosť",
+        "total": 34567.89,
+        "trend": "990.21"
+      },
+      {
+        "index": 3,
+        "currency": "CZK",
+        "description": "Pokladnica 3",
+        "total": 45678.90,
+        "trend": "12"
+      },
+      {
+        "index": 4,
+        "currency": "HUF",
+        "description": "Pokladnica 4",
+        "total": 56789.01,
+        "trend": "-490.21"
+      }
+    ],
+    "financial_status": [
+      {
+        "description": "Pohľadávky",
+        "total": 3945,
+        "due": 1345.66,
+        "overdue": 2599.34,
+        "long_term": 1232.45,
+        "currency": "EUR"
+      },
+      {
+        "description": "Záväzky",
+        "total": 1345.66,
+        "due": 123.45,
+        "overdue": 122.45,
+        "long_term": 1100.76,
+        "currency": "EUR"
+      }
+    ],
+    "receivables_total": 1200.00,
+    "receivables": [
+      {
+        "document_number": "D001",
+        "supplier": "Telekom, a.s.",
+        "due_date": "5.9.2024",
+        "overdue_days": 15,
+        "amount": 50.00,
+        "currency": "EUR"
+      },
+      {
+        "document_number": "D002",
+        "supplier": "SEPS, a.s.",
+        "due_date": "7.9.2024",
+        "overdue_days": 13,
+        "amount": 400.00,
+        "currency": "EUR"
+      },
+      {
+        "document_number": "D003",
+        "supplier": "Doprastav, a.s.",
+        "due_date": "12.9.2024",
+        "overdue_days": 3,
+        "amount": 750.00,
+        "currency": "EUR"
+      }
+    ],
+    "liabilities_total": 12345.67,
+    "liabilities": [
+      {
+        "document_number": "L001",
+        "creditor": "PPD, s.r.o.",
+        "due_date": "12.10.2024",
+        "overdue_days": 2,
+        "amount": 620.40,
+        "currency": "EUR"
+      },
+      {
+        "document_number": "L002",
+        "creditor": "Heineken Slovensko, a.s.",
+        "due_date": "20.10.2024",
+        "overdue_days": -4,
+        "amount": 245.30,
+        "currency": "EUR"
+      },
+      {
+        "document_number": "L003",
+        "creditor": "Billa, s.r.o.",
+        "due_date": "18.10.2024",
+        "overdue_days": 0,
+        "amount": 780.00,
+        "currency": "EUR"
+      },
+      {
+        "document_number": "L004",
+        "creditor": "Lidl Slovenská republika, v.o.s.",
+        "due_date": "15.10.2024",
+        "overdue_days": 3,
+        "amount": 550.50,
+        "currency": "EUR"
+      },
+      {
+        "document_number": "L005",
+        "creditor": "Tesco Stores SR, a.s.",
+        "due_date": "22.10.2024",
+        "overdue_days": -10,
+        "amount": 960.20,
+        "currency": "EUR"
+      },
+      {
+        "document_number": "L006",
+        "creditor": "Shell Slovakia, s.r.o.",
+        "due_date": "30.9.2024",
+        "overdue_days": 15,
+        "amount": 315.90,
+        "currency": "EUR"
+      },
+      {
+        "document_number": "L007",
+        "creditor": "OMV Slovensko, s.r.o.",
+        "due_date": "5.10.2024",
+        "overdue_days": 10,
+        "amount": 180.60,
+        "currency": "EUR"
+      },
+      {
+        "document_number": "L008",
+        "creditor": "Metro Cash & Carry SR, s.r.o.",
+        "due_date": "8.10.2024",
+        "overdue_days": 7,
+        "amount": 540.70,
+        "currency": "EUR"
+      },
+      {
+        "document_number": "L009",
+        "creditor": "IKEA Bratislava, s.r.o.",
+        "due_date": "10.10.2024",
+        "overdue_days": 5,
+        "amount": 410.80,
+        "currency": "EUR"
+      },
+      {
+        "document_number": "L010",
+        "creditor": "Alza.sk, a.s.",
+        "due_date": "25.9.2024",
+        "overdue_days": 20,
+        "amount": 330.40,
+        "currency": "EUR"
+      }
+    ]
+  }
+]

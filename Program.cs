@@ -68,6 +68,23 @@ app.MapPost("/pushNotificationPerUser", async ([FromQuery] string endpoint, Noti
     });
 });
 
+app.MapGet("/data", async (HttpContext context) =>
+{
+    try
+    {
+        var jsonData = await File.ReadAllTextAsync("data.json");
+        var data = JsonSerializer.Deserialize<object>(jsonData);
+
+        context.Response.ContentType = "application/json";
+        await context.Response.WriteAsJsonAsync(data);
+    }
+    catch (Exception ex)
+    {
+        context.Response.StatusCode = 500;
+        await context.Response.WriteAsync($"Chyba pri načítavaní dát: {ex.Message}");
+    } 
+});
+
 app.Run();
 
 static async Task OnHandleNotification(
